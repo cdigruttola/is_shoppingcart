@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="admin695btzpaq1ikxkhsrbb" source-language="it-IT" target-language="it-IT" datatype="plaintext">
+    <body>
+      <trans-unit id="6354c00dadee375467a1b8bddfdc6aaa">
+        <source>Product added to cart</source>
+        <target>Prodotto aggiunto al carrello</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="856ab109229e8acfcddd5c6766a8d956">
+        <source>Subtotal:</source>
+        <target>Totale parziale:</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="66f51e43606e2baebb8e9c3bfe965da4">
+        <source>Shipping:</source>
+        <target>Spedizione:</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

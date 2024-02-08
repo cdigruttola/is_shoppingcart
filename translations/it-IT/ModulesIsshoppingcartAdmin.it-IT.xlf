@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="admin695btzpaq1ikxkhsrbb" source-language="it-IT" target-language="it-IT" datatype="plaintext">
+    <body>
+      <trans-unit id="f373b403975d367491574fb2c739fef7">
+        <source>Shopping cart</source>
+        <target>Shopping cart</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="43041578d56a73cbb8692b81ed5f0147">
+        <source>Display a shopping cart icon on your pages and the number of items it contains.</source>
+        <target>Display a shopping cart icon on your pages and the number of items it contains.</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

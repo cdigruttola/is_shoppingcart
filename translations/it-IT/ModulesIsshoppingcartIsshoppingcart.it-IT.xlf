@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="admin695btzpaq1ikxkhsrbb" source-language="it-IT" target-language="it-IT" datatype="plaintext">
+    <body>
+      <trans-unit id="614a8820aa4ac08ce2ee398a41b10778">
+        <source>Ajax cart</source>
+        <target>Ajax cart</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="2584aeef6911ac7fefc42f1663a2bc70">
+        <source>Activate Ajax mode for the cart.</source>
+        <target>Activate Ajax mode for the cart.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9254cd9a15c6cc29d90cf5e585628e0f">
+        <source>Your cart</source>
+        <target>Il tuo carrello</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="a83f058757014326cf0f8029286f8f07">
+        <source>Unfortunately your basket is empty</source>
+        <target>Il tuo carrello è vuoto</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
