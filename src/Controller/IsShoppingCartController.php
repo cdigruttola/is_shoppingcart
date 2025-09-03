@@ -4,19 +4,22 @@ declare(strict_types=1);
 
 namespace Oksydan\IsShoppingcart\Controller;
 
-use Oksydan\IsShoppingcart\Translations\TranslationDomains;
-use PrestaShopBundle\Controller\Admin\FrameworkBundleAdminController;
+use PrestaShop\PrestaShop\Core\Form\Handler;
+use PrestaShopBundle\Controller\Admin\PrestaShopAdminController;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class IsShoppingCartController extends FrameworkBundleAdminController
+class IsShoppingCartController extends PrestaShopAdminController
 {
-    public function index(): Response
-    {
-        $configurationForm = $this->get('oksydan.is_shoppingcart.configuration.form_handler')->getForm();
+    public function index(
+        #[Autowire(service: 'oksydan.is_shoppingcart.configuration.form_handler')]
+        Handler $form,
+    ): Response {
+        $configurationForm = $form->getForm();
 
         return $this->render('@Modules/is_shoppingcart/views/templates/admin/index.html.twig', [
-            'translationDomain' => TranslationDomains::TRANSLATION_DOMAIN_ADMIN,
+            'translationDomain' => 'Modules.Isshoppingcart.Admin',
             'configurationForm' => $configurationForm->createView(),
             'help_link' => false,
         ]);
@@ -27,11 +30,14 @@ class IsShoppingCartController extends FrameworkBundleAdminController
      *
      * @return Response
      */
-    public function saveConfiguration(Request $request): Response
-    {
+    public function saveConfiguration(
+        Request $request,
+        #[Autowire(service: 'oksydan.is_shoppingcart.configuration.form_handler')]
+        Handler $formHandler,
+    ): Response {
         $redirectResponse = $this->redirectToRoute('is_shoppingcart_controller');
 
-        $form = $this->get('oksydan.is_shoppingcart.configuration.form_handler')->getForm();
+        $form = $formHandler->getForm();
         $form->handleRequest($request);
 
         if (!$form->isSubmitted()) {
@@ -40,10 +46,10 @@ class IsShoppingCartController extends FrameworkBundleAdminController
 
         if ($form->isValid()) {
             $data = $form->getData();
-            $saveErrors = $this->get('oksydan.is_shoppingcart.configuration.form_handler')->save($data);
+            $saveErrors = $formHandler->save($data);
 
             if (0 === count($saveErrors)) {
-                $this->addFlash('success', $this->trans('Successful update.', 'Admin.Notifications.Success'));
+                $this->addFlash('success', $this->trans('Successful update.', [], 'Admin.Notifications.Success'));
 
                 return $redirectResponse;
             }
@@ -55,7 +61,7 @@ class IsShoppingCartController extends FrameworkBundleAdminController
             $formErrors[] = $error->getMessage();
         }
 
-        $this->flashErrors($formErrors);
+        $this->addFlashErrors($formErrors);
 
         return $redirectResponse;
     }

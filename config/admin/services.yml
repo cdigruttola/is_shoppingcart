@@ -8,6 +8,8 @@ services:
   # Controller
   Oksydan\IsShoppingcart\Controller\IsShoppingCartController:
     public: true
+    autowire: true
+    autoconfigure: true
     class: Oksydan\IsShoppingcart\Controller\IsShoppingCartController
 
   # config form
@@ -29,11 +31,11 @@ services:
       - '@form.factory'
       - '@prestashop.core.hook.dispatcher'
       - '@oksydan.is_shoppingcart.configuration.form_provider'
-      - 'Oksydan\IsShoppingcart\Form\ImageSliderConfigurationType'
+      - 'Oksydan\IsShoppingcart\Form\ShoppingCartConfigurationType'
       - 'ConfigurationForm'
 
   oksydan.is_shoppingcart.form.configuration_type:
-    class: 'Oksydan\IsShoppingcart\Form\ImageSliderConfigurationType'
+    class: 'Oksydan\IsShoppingcart\Form\ShoppingCartConfigurationType'
     parent: 'form.type.translatable.aware'
     public: true
     tags:
