@@ -1,5 +1,4 @@
 ### PrestaShop cache ###
-config.xml
 config_*.xml
 
 ### NPM ###
